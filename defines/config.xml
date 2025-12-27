@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module name="config">
+
+    <!-- 自定义 DateTime 类型 -->
+    <!-- 支持多种日期时间格式配置 -->
+    <bean name="DateTime" comment="日期时间类型，支持多种格式">
+        <var name="value" type="datetime" comment="时间值"/>
+    </bean>
+
+    <!-- 时间范围类型 -->
+    <bean name="DateTimeRange" sep="~" comment="时间范围，格式: start~end">
+        <var name="start_time" type="datetime" comment="开始时间"/>
+        <var name="end_time" type="datetime" comment="结束时间"/>
+    </bean>
+
+    <!-- 一天内的时间点 -->
+    <bean name="TimeOfDay" sep=":" comment="时间点，格式: HH:mm:ss">
+        <var name="hour" type="int" comment="小时(0-23)"/>
+        <var name="minute" type="int" comment="分钟(0-59)"/>
+        <var name="second" type="int" comment="秒(0-59)"/>
+    </bean>
+
+    <!-- 一天内的时间范围 -->
+    <bean name="TimeOfDayRange" sep=";" comment="时间段范围，格式: HH:mm:ss;HH:mm:ss">
+        <var name="start_time" type="TimeOfDay" comment="开始时间点"/>
+        <var name="end_time" type="TimeOfDay" comment="结束时间点"/>
+    </bean>
+
+</module>
